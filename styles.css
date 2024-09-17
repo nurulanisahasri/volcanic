@@ -15,8 +15,10 @@ body {
 
 /* adjustment according to screen size */
 @media (max-width: 768px) {
+    #volcanic_header .wrapper {
     .some-class {
         padding: 20px;
+    }
     }
 }
 
