@@ -1,40 +1,32 @@
-body {
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.hero-section {
+    background: url('your-image-url.jpg') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f8f9fa;
-    color: #333;
-    font-family: Arial, sans-serif;
 }
 
-.container {
-    text-align: center;
+.search-box {
+    margin-top: 20px;
 }
 
-/* adjustment according to screen size */
-@media (max-width: 768px) {
-    #volcanic_header .wrapper {
-    .some-class {
-        padding: 20px;
-    }
-    }
+.search-box .form-control, .search-box .btn {
+    margin-top: 10px;
+    width: 200px; /* Adjust based on your design */
 }
 
-#volcanic_header .wrapper {
-    position: relative;
-    margin: 0 auto;
-    padding: 20px 0;
-    display: flex;
+.search-box .form-control {
+    display: inline-block;
+    vertical-align: middle;
 }
-
-.logo {
-    font-family: 'Montserrat', sans-serif;
-}
-
-#volcanic_header #navbar {
-    display: flex;
-    align-items: right;
-}
-
