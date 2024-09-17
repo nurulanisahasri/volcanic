@@ -26,9 +26,15 @@ body {
     position: relative;
     margin: 0 auto;
     padding: 20px 0;
+    display: flex;
 }
 
 .logo {
     font-family: 'Montserrat', sans-serif;
+}
+
+#volcanic_header #navbar {
+    display: flex;
+    align-items: right;
 }
 
