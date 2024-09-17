@@ -5,10 +5,12 @@ body, html {
 
 .navbar-brand {
     font-weight: bold;
+    color: rgb(39, 36, 36);
+    font-size: 30px;
 }
 
 .hero-section {
-    background: url('your-image-url.jpg') no-repeat center center;
+    background: url('frontpage.jpg') no-repeat center center;
     background-size: cover;
     height: 100vh;
     display: flex;
