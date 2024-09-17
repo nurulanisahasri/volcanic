@@ -12,3 +12,15 @@ body {
 .container {
     text-align: center;
 }
+
+/* adjustment according to screen size */
+@media (max-width: 768px) {
+    .some-class {
+        padding: 20px;
+    }
+}
+
+.logo {
+    font-family: 'Montserrat', sans-serif;
+}
+
