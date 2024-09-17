@@ -22,6 +22,12 @@ body {
     }
 }
 
+#volcanic_header .wrapper {
+    position: relative;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
 .logo {
     font-family: 'Montserrat', sans-serif;
 }
