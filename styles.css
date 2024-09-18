@@ -295,7 +295,11 @@ div {
 
 /* Search Box */
 .search-box {
+    position: -webkit-sticky;
+    top: 0;
     margin-top: 20px;
+    z-index: 3;
+    position: sticky;
 }
 
 .search-box .form-control, .search-box .btn-primary  {
@@ -306,7 +310,8 @@ div {
 }
 
 .icon p{
-    font-size: 8px;
+    font-size: 10px;
+
     text-align: center;
     margin-top: 4px;
     font-family: 'Montserrat', sans-serif;
@@ -560,18 +565,24 @@ div {
 
 .icon-slider {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
 }
 
 .icon {
-    display: flex;
     flex-direction: row;
     align-items: center;
     text-align: center;
     margin: 0 10px;
     cursor: pointer;
+}
+
+.icon img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 5px;
 }
 
 .clearfix::after {
@@ -713,4 +724,17 @@ footer a:hover {
         margin: 10px 0;
     }
 
+    .overlay-section {
+        padding: 15px 0;  /* Slightly smaller padding */
+    }
+
+}
+
+/* Media queries for mobile devices */
+@media (max-width: 480px) {
+    .overlay-section {
+        padding: 10px 0;  /* Even smaller padding */
+        background-color: rgba(128, 128, 128, 0.7);
+        font-size: 10px;  /* Slightly darker for better readability on small devices */
+    }
 }
