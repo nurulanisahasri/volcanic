@@ -1,34 +1,579 @@
+/* Basic styles */
+/* body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+} */
+
 body, html {
     height: 100%;
     margin: 0;
 }
 
-.navbar-brand {
-    font-weight: bold;
-    color: rgb(39, 36, 36);
-    font-size: 30px;
+#body {
+    padding: 0 0 0 0;
 }
 
-.hero-section {
-    background: url('frontpage.jpg') no-repeat center center;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+} 
+
+.btn {
+    text-decoration: none;
+    color: #fff;
+    padding: 8px 16px;
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 0;
+    font-size: 12px;
+}
+
+.btn-login {
+    background-color: #ffffff;
+    color: #333;
+    border-right: 1px solid rgb(232, 113, 16);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+    
+.btn-login:hover {
+    background-color: #bbbaba;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+    
+.btn-register {
+    background-color: rgb(232, 113, 16);
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.btn-register:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5); /* Larger shadow on hover for emphasis */
+}
+    
+.btn-primary {
+    background-color: rgb(232, 113, 16);
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+    
+.btn:hover {
+    opacity: 0.9;
+}
+
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+/* Header styles */
+header {
+    background-color: #fafafa;
+    color: #fff;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 10px;
+ }
+/*
+header nav {
+    flex-grow: 1;
+    text-align: left;
+}
+
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+} 
+
+header nav li {
+    margin-left: 0 20px;
+} 
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+}  */
+
+.nav-logo {
+    font-weight: bold;
+    color: rgb(86, 86, 86);
+    font-size: 30px;
+    font: 'Montserrat', sans-serif;  
+}
+
+.nav-link {
+    color: rgb(86, 86, 86);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    text-decoration: none;
+    padding: 0 8px; 
+    display: flex; 
+    text-transform: uppercase;
+}
+
+#nav-menu {
+    display: flex;
+    font-size: 15px;
+    padding-left: 360px;
+    margin: 0;
+    cursor: pointer;
+}
+
+#nav-btn {
+    display: flex;
+    padding-right: 40px;
+    margin-left: auto;
+    text-transform: uppercase;
+}
+
+.navbar {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+    margin: 0;
+}
+
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+.connecting-loader {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    z-index: 1000000;
+    background: #fff;
+}
+
+.connecting-loader .loader-wrapper {
+    display: inline-block;
+    position: relative;
+    top: calc(50% - 40px);
+    padding: 20px;
+}
+
+.loader-icon
+
+.mm-menu, .mm-slideout {
+    --mm-sidebar-collapsed-size: 44px;
+    --mm-sidebar-expanded-size: 440px;
+}
+
+.mm-slideout {
+    transition: transform 0.4s;
+    z-index: 1;
+}
+
+.mm-page{
+    box-sizing: border-box;
+    position: relative;
+}
+
+.smaller-header {
+    padding: 10px 0; /* Reduced padding */
+    transition: all 0.3s ease-in-out;
+}
+
+.smaller-header .logo h1 {
+    font-size: 18px; /* Smaller logo size */
+}
+
+.smaller-header nav {
+    margin-top: 0;
+}
+
+#volcanic-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    width: 100%;
+    text-decoration: none;
+    transition: padding 0.3s ease-in-out, top 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+#volcanic-header .container {
+    display: flex;
+    align-items: center;
+    width: 100%; 
+    padding-left: 10px;
+}
+
+
+/* Hero section styles */
+.hero {
+    background-color: #fff;
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.hero-content h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero-content form {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.hero-content input[type="text"] {
+    width: 200px;
+    padding: 12px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Images */
+.hero-content {
+    position: relative;
     background-size: cover;
+    background-attachment: fixed;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: #fff;
+    text-shadow: 2px 2px 4px #000000;
 }
 
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+.hero-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.3);
+    z-index: -1;
+}
+
+/* Search Box */
 .search-box {
     margin-top: 20px;
 }
 
-.search-box .form-control, .search-box .btn {
-    margin-top: 10px;
-    width: 200px; /* Adjust based on your design */
+.search-box .form-control, .search-box .btn-primary  {
+    margin-bottom: 6px;
+    width: 200px; 
+    display: inline-block;
+    border-radius: 0;
 }
 
-.search-box .form-control {
+
+/* Featured jobs section styles */
+.featured-jobs {
+    padding: 80px 0;
+}
+
+.featured-jobs h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.jobs-slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+.job-card {
+    min-width: 300px;
+    padding: 20px;
+    margin-right: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.job-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.job-card p {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.job-card button {
+    width: auto;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.slider-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.slider-controls button {
+    background-color: #f9a01d;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.slider-controls button:hover {
+    background-color: #f58c00;
+}
+
+/* About us section styles */
+.about-us {
+    background-color: #fff;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.about-us-content {
     display: inline-block;
-    vertical-align: middle;
+}
+
+.about-us-content h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.about-us-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat h3 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.stat p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Testimonials section styles */
+.testimonials {
+    background-color: #f5f5f5;
+    padding: 80px 0;
+}
+
+.testimonials h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.testimonials p {
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.testimonial-card {
+    display: flex;
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-image {
+    width: 150px;
+    height: 150px;
+    margin-right: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.testimonial-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.testimonial-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-content p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.testimonial-content h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.testimonial-content h4 {
+    font-size: 14px;
+    color: #777;
+}
+
+/* Work with us section styles */
+.work-with-us {
+    background-color: #fff;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.work-with-us h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.work-with-us p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+/* Latest insights section styles */
+.latest-insights {
+    background-color: #f5f5f5;
+    padding: 80px 0;
+}
+
+.latest-insights h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.insights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.insight-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.insight-card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.insight-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.insight-card p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+    font-size: 10px;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer .footer-section {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+footer h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+footer li {
+    margin-bottom: 5px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }

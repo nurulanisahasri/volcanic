@@ -1,45 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Volcanic</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <header>
-        <nav class="navbar">
-            <a class="navbar-brand" href="#">volcanic</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active"><a class="nav-link" href="#">Jobs</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Candidates</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Clients</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Join Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Insights</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
-                </ul>
+    <div id="body" class="mm-page mm-slideout">
+        <div data-style class="connection-loader od_passive_snippet">
+            <div class="loader-wrapper">
+                <div class="loader-icon">
+                </div>
             </div>
-        </nav>
-        <nav>
-            
-        </nav>
-    </header>
-    <div class="hero-section text-white text-center">
-        <h1>Accusantium doloremque quae ab illo</h1>
-        <div class="search-box">
-            <input type="text" placeholder="keyword" class="form-control">
-            <input type="text" placeholder="location" class="form-control">
-            <button class="btn btn-primary">Search Jobs</button>
         </div>
+        <header id="volcanic-header">
+            <div class="container">
+                <div class="logo">
+                    <a class="nav-logo" href="#">volcanic</a>
+                </div>
+                <nav id="nav-menu" class="collapse navbar-collapse">
+                    <ul class="navbar">
+                        <li><a class="nav-link" href="#">About</a></li>
+                        <li><a class="nav-link" href="#">Candidates</a></li>
+                        <li><a class="nav-link" href="#">Clients</a></li>
+                        <li><a class="nav-link" href="#">Join Us</a></li>
+                        <li><a class="nav-link" href="#">Insights</a></li>
+                        <li><a class="nav-link" href="#">Contact Us</a></li>
+                    </ul>
+                </nav>
+                <nav id="nav-btn">
+                    <a href="#" class="btn btn-login">Login</a>
+                    <a href="#" class="btn btn-register">Register</a>
+                </nav>
+            </div>
+        </header>
+
+        <main id="content">
+            <div class="hero-content" style="background-image: url('images/frontpage.jpg');">
+                <h2>Welcome to Volcanic!</h2>
+                <form class="search-box btn">
+                    <input type="text" placeholder="Keyword" class="form-control" required>
+                    <input type="text" placeholder="Location" class="form-control" required>
+                    <button class="btn btn-primary">Search Jobs</button>
+                </form>
+            </div>
+        </main>
+
+
+
+        <footer>
+            <div class="container">
+                <div class="footer-section">
+                    <h3>Get Social</h3>
+                    <ul>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Facebook</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Email Us</h3>
+                    <p>info@volcanic.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Get in Touch</h3>
+                    <p>UK: 0161 217 1517</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Find Us</h3>
+                    <p>Dale House Floor 8, Tiviot Dale Stockport, SK1 1TB</p>
+                </div>
+            </div>
+        </footer>
     </div>
+    <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
+
 </html>
