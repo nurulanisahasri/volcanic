@@ -17,6 +17,10 @@ body, html {
     flex-wrap: wrap;
 }
 
+body ul {
+    list-style: none;
+}
+
 .container {
     max-width: 2200px;
     margin: 0 auto;
@@ -254,6 +258,8 @@ div {
     text-shadow: 2px 2px 4px #000000;
     margin-bottom: 50%;
     position: relative;
+    background-color: #595959;
+    z-index: -1;
 }
 
 .hero-content h2 {
@@ -558,7 +564,7 @@ div {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background-color: rgba(128, 128, 128, 0.5); /* Grey with opacity */
+    background-color: rgba(42, 41, 41, 0.5); /* Grey with opacity */
     padding: 20px 0;
     z-index: 2;
 }
@@ -583,6 +589,7 @@ div {
     width: 50px;
     height: 50px;
     margin-bottom: 5px;
+    fill: #ffffff;
 }
 
 .clearfix::after {
@@ -604,53 +611,95 @@ div {
 
 
 /* Footer styles */
-footer {
+#volcanic-footer {
     background-color: #333;
     color: #fff;
-    padding: 30px 0;
+    padding: 25px  0;
     text-align: center;
     font-size: 10px;
     position: relative;
     width: 100%;
     clear: both;
     z-index: 1;
+    position: relative;
 }
 
-footer .container {
-    display: flex;
+.container {
+    display: block;
     justify-content: space-around;
+    align-items: center;
+    overflow: visible;
+}
+
+.footer-section {
+    display: -webkit-box;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    font-size: 10px;
+}
+
+h3 {
+    font-size: 14px;
+}
+
+.info-socmed {
+    display: flex;
+    align-items: center;
+    inline-size: auto;
+
+}
+
+.info-socmed img {
+    width: 24px;
+    height: auto;
+    justify-content: space-between;
+}
+
+.icon-footer {
+    inline-size: auto;
+    justify-content: space-between;
+
+}
+
+.icon-footer img {
+    width: 44px;
+    height: auto;
+    justify-content: space-between;
+}
+
+.social-links {
+    margin: 0 0 0 30px;
+    display: flex;
+    align-items: center;
+    z-index: 3;
+}
+
+.grid {
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    width: 85%;
+}
+
+.li {
+    display: list-item;
+    list-style: none;
+}
+
+/* .socmed {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
 }
 
-footer .footer-section {
-    text-align: left;
-    margin-bottom: 20px;
-}
+.socmed img {
+    width: 24px; 
+    height: auto; 
+} */
 
-footer h3 {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-
-footer ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-footer li {
-    margin-bottom: 5px;
-}
-
-footer a {
-    color: #fff;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
 
 /* Styles for Mobile Navigation */
 .hamburger-menu {
@@ -736,5 +785,11 @@ footer a:hover {
         padding: 10px 0;  /* Even smaller padding */
         background-color: rgba(128, 128, 128, 0.7);
         font-size: 10px;  /* Slightly darker for better readability on small devices */
+    }
+
+    #volcanic-footer .footer-section{
+        -ms-flex-direction: column;
+        flex-direction: column;
+        font-size: 8px;
     }
 }
