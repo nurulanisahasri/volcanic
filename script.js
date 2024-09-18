@@ -11,3 +11,12 @@ function shrinkHeaderOnScroll() {
     header.classList.remove("smaller-header");
   }
 }
+
+//for responsive on mobile and tab
+const hamburger = document.querySelector(".hamburger-menu");
+const navMenu = document.querySelector("#nav-menu");
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+});
