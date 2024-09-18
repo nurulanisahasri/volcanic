@@ -41,6 +41,7 @@ body ul {
     transition: background-color 0.3s;
     border-radius: 0;
     font-size: 12px;
+    line-height: 14px;
 }
 
 .btn-login {
@@ -247,6 +248,7 @@ div {
 }
 
 .hero-content {
+
     background-size: cover;
     background-attachment: fixed;
     height: 100vh; /* Adjust height as necessary */
@@ -255,8 +257,8 @@ div {
     justify-content: center;
     align-items: center;
     color: #fff;
-    text-shadow: 2px 2px 4px #000000;
-    margin-bottom: 50%;
+    text-shadow: 2px 2px 40px #424242;
+    margin-bottom: 0;
     position: relative;
     background-color: #595959;
     z-index: -1;
@@ -276,11 +278,11 @@ div {
 }
 
 .hero-content input[type="text"] {
-    width: 200px;
-    padding: 12px;
-    margin-right: 10px;
+    width: 350px;
+    padding: 4px;
+    margin-right: 0;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 0px;
 }
 
 /* *, ::after, ::before {
@@ -300,24 +302,29 @@ div {
 }
 
 /* Search Box */
-.search-box {
-    position: -webkit-sticky;
-    top: 0;
-    margin-top: 20px;
-    z-index: 3;
-    position: sticky;
-}
 
-.search-box .form-control, .search-box .btn-primary  {
+.search-box .form-control {
     margin-bottom: 6px;
     width: 200px; 
     display: inline-block;
     border-radius: 0;
+    font-size: 12px;;
+    border: none;
+    cursor: pointer;
+}
+
+.form-control {
+    margin-bottom: 6px;
+    width: 200px; 
+    display: inline-block;
+    border-radius: 0;
+    font-size: 12px;;
+    border: none;
+    cursor: pointer;
 }
 
 .icon p{
     font-size: 10px;
-
     text-align: center;
     margin-top: 4px;
     font-family: 'Montserrat', sans-serif;
@@ -565,7 +572,7 @@ div {
     bottom: 0;
     width: 100%;
     background-color: rgba(42, 41, 41, 0.5); /* Grey with opacity */
-    padding: 20px 0;
+    padding: 15px 0;
     z-index: 2;
     flex-direction: row;
 }
@@ -576,6 +583,8 @@ div {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .icon {
@@ -585,6 +594,7 @@ div {
     text-align: center;
     margin: 0 10px;
     cursor: pointer;
+    transition: transform 0.5s ease-in-out;
 }
 
 .icon img {
@@ -593,6 +603,64 @@ div {
     margin-bottom: 5px;
     fill: #ffffff;
     filter: brightness(0) invert(1);
+}
+
+.slide {
+    min-width: 100%;
+    transition: opacity 0.5s;
+    display: block;
+}
+
+.slide-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    z-index: 2;
+}
+
+.prev-btn, .next-btn {
+    background-color: #fff; /* Button background */
+    border-radius: 50%; /* Makes the button circular */
+}
+
+.prev-btn::before, .next-btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-style: solid;
+    border-color: transparent;
+    border-width: 4px;
+    margin-top: -4px; /* Align center */
+    margin-left: -4px; /* Align center */
+}
+
+.prev-btn::before {
+    border-right-color: #333; /* Arrow color */
+    transform: translate(-50%, -50%) rotate(-45deg);
+    width: 8px; /* Arrow size */
+    height: 8px; /* Arrow size */
+}
+
+.next-btn::before {
+    border-left-color: #333; /* Arrow color */
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 8px; /* Arrow size */
+    height: 8px; /* Arrow size */
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
 }
 
 .clearfix::after {
@@ -631,6 +699,7 @@ div {
     justify-content: space-around;
     align-items: center;
     overflow: visible;
+    z-index: 3;
 }
 
 .footer-section {
@@ -642,33 +711,46 @@ div {
     font-size: 10px;
 }
 
-h3 {
+.footer-section img {
+    width: 30x;
+    height: 30px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.info-socmed h3 {
     font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .info-socmed {
-    display: flex;
+    /*display: flex;*/
     align-items: center;
     inline-size: auto;
-
-}
-
-.info-socmed img {
-    width: 24px;
-    height: auto;
     justify-content: space-between;
+
 }
 
-.icon-footer {
+.icon-footer h3{
     inline-size: auto;
     justify-content: space-between;
-
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.icon-footer img {
-    width: 44px;
+.icon-footer-msg h3 {
+    inline-size: auto;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.icon-footer-msg img {
+    width: 50px;
     height: auto;
     justify-content: space-between;
+    inline-size: auto;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .social-links {
@@ -682,12 +764,7 @@ h3 {
     position: relative;
     margin: 0 auto;
     padding: 0;
-    width: 85%;
-}
-
-.li {
-    display: list-item;
-    list-style: none;
+    width: 70%;
 }
 
 /* .socmed {
@@ -739,7 +816,9 @@ h3 {
 
 @media (max-width: 768px) {
     .hero-content {
-        justify-content: center; /* Aligns items to the top on smaller screens */
+        justify-content: center; 
+        background-position: top center;
+        height: 60vh;
     }
 
     .hero-content h2 {
@@ -779,6 +858,45 @@ h3 {
 
 /* Media queries for mobile devices */
 @media (max-width: 480px) {
+
+    .hero-content {
+        justify-content: center; 
+        height: 50vh;
+    }
+
+    .hero-content h2 {
+        padding-top: 10px; /* Reduces padding on smaller devices */
+    }
+
+    #nav-menu {
+        display: none; /* Hide the main navigation menu on smaller screens */
+    }
+
+    /* Show hamburger menu on smaller screens */
+    .hamburger-menu {
+        display: block;
+    }
+
+    /* Styles for the navigation menu when active */
+    #nav-menu.active {
+        display: flex; /* Make the navigation menu visible */
+        flex-direction: column; /* Arrange menu items vertically */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        z-index: 1;
+    }
+
+    #nav-menu.active ul {
+        flex-direction: column; /* Arrange menu items vertically */
+    }
+
+    #nav-menu.active li {
+        margin: 10px 0;
+    }
+
     .overlay-section {
         padding: 10px 0;  /* Even smaller padding */
         background-color: rgba(128, 128, 128, 0.7);
