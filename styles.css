@@ -23,7 +23,7 @@ body ul {
 
 .container {
     max-width: 2200px;
-    margin: -15px auto;
+    margin: 0 auto;
     padding: 0 15px;
     display: flex;
     justify-content: space-around;
