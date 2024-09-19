@@ -1,77 +1,73 @@
-// window.onscroll = function () {
-//   shrinkHeaderOnScroll();
-// };
-
-// function shrinkHeaderOnScroll() {
-//   var header = document.getElementById("volcanic-header"); // Ensure this is targeting the right element
-//   if (window.pageYOffset > 50) {
-//     // Changed to window.pageYOffset for better compatibility
-//     header.classList.add("smaller-header");
-//   } else {
-//     header.classList.remove("smaller-header");
-//   }
-// }
-
-// //for responsive on mobile and tab
-// const hamburger = document.querySelector(".hamburger-menu");
-// const navMenu = document.querySelector("#nav-menu");
-
-// hamburger.addEventListener("click", () => {
-//   hamburger.classList.toggle("active");
-//   navMenu.classList.toggle("active");
-// });
-
-// //responsice button
-// document
-//   .querySelector(".prev-btn")
-//   .addEventListener("click", () => slideIcons(-1));
-// document
-//   .querySelector(".next-btn")
-//   .addEventListener("click", () => slideIcons(1));
-
-// let currentSlide = 0;
-// const maxSlide = document.querySelectorAll(".icon").length - 5; // Total icons minus visible icons
-
-// function slideIcons(direction) {
-//   if (direction === -1 && currentSlide > 0) {
-//     currentSlide--;
-//   } else if (direction === 1 && currentSlide < maxSlide) {
-//     currentSlide++;
-//   }
-//   document.querySelector(".icon-slider").style.transform = `translateX(-${
-//     currentSlide * 20
-//   }%)`;
-// }
-
 document.addEventListener("DOMContentLoaded", function () {
-  // Slider functionality
-  const iconSlider = document.querySelector(".icon-slider");
-  const prevBtn = document.querySelector(".prev-btn");
-  const nextBtn = document.querySelector(".next-btn");
-  let scrollAmount = 0;
+  const slider = document.querySelector(".icon-slider");
+  const icons = document.querySelectorAll(".icon");
+  const totalIcons = icons.length;
+  let currentIndex = 0;
+  const slideInterval = 3000; // Time in milliseconds
 
-  // Slider event listeners
-  nextBtn.addEventListener("click", function () {
-    iconSlider.scrollBy({
-      left: 200,
-      behavior: "smooth",
-    });
+  function slideIcons() {
+    currentIndex++;
+    if (currentIndex >= totalIcons) {
+      currentIndex = 0; // Loop back to the first icon
+    }
+    const offset = -currentIndex * (100 / totalIcons); // Calculate the offset for sliding
+    slider.style.transform = `translateX(${offset}%)`;
+  }
+
+  // Set the interval for auto-sliding
+  setInterval(slideIcons, slideInterval);
+
+  // Optional: Add click events for the buttons
+  document.querySelector(".prev-btn").addEventListener("click", function () {
+    currentIndex = currentIndex > 0 ? currentIndex - 1 : totalIcons - 1;
+    slideIcons();
   });
 
-  prevBtn.addEventListener("click", function () {
-    iconSlider.scrollBy({
-      left: -200,
-      behavior: "smooth",
-    });
+  document.querySelector(".next-btn").addEventListener("click", function () {
+    slideIcons();
+  });
+});
+
+// Mobile navigation toggle functionality
+const hamburgerMenu = document.querySelector(".hamburger-menu");
+const navMenu = document.querySelector("#nav-menu");
+
+hamburgerMenu.addEventListener("click", function () {
+  navMenu.classList.toggle("active");
+  // Toggle the active class to transform the hamburger icon
+  hamburgerMenu.classList.toggle("active");
+});
+
+//Popup for Login/Register
+document.addEventListener("DOMContentLoaded", function () {
+  const popupContainer = document.getElementById("popup-container");
+  const loginForm = document.getElementById("login-form");
+  const registerForm = document.getElementById("register-form");
+
+  document.querySelector(".btn-login").addEventListener("click", function (e) {
+    e.preventDefault();
+    loginForm.classList.remove("hidden");
+    registerForm.classList.add("hidden");
+    popupContainer.style.display = "flex";
   });
 
-  // Mobile navigation toggle functionality
-  const hamburgerMenu = document.querySelector(".hamburger-menu");
-  const navMenu = document.querySelector("#nav-menu");
+  document
+    .querySelector(".btn-register")
+    .addEventListener("click", function (e) {
+      e.preventDefault();
+      registerForm.classList.remove("hidden");
+      loginForm.classList.add("hidden");
+      popupContainer.style.display = "flex";
+    });
 
-  hamburgerMenu.addEventListener("click", function () {
-    navMenu.classList.toggle("active");
-    // Toggle the active class to transform the hamburger icon
-    hamburgerMenu.classList.toggle("active");
+  document.querySelector(".close-popup").addEventListener("click", function () {
+    popupContainer.style.display = "none";
+  });
+
+  // Close popup when clicking outside of it
+  popupContainer.addEventListener("click", function (e) {
+    if (e.target === popupContainer) {
+      popupContainer.style.display = "none";
+    }
   });
 });

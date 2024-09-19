@@ -27,12 +27,12 @@
                 </div>
                 <nav id="nav-menu" class="collapse navbar-collapse navbar-expand-md">
                     <ul class="navbar">
-                        <li><a class="nav-link" href="#">About</a></li>
-                        <li><a class="nav-link" href="#">Candidates</a></li>
-                        <li><a class="nav-link" href="#">Clients</a></li>
-                        <li><a class="nav-link" href="#">Join Us</a></li>
-                        <li><a class="nav-link" href="#">Insights</a></li>
-                        <li><a class="nav-link" href="#">Contact Us</a></li>
+                        <li><a class="nav-link" href="#about-us">About</a></li>
+                        <li><a class="nav-link" href="#content">Candidates</a></li>
+                        <li><a class="nav-link" href="#testimonials">Clients</a></li>
+                        <li><a class="nav-link" href="#work-with-us">Join Us</a></li>
+                        <li><a class="nav-link" href="#latest-insights">Insights</a></li>
+                        <li><a class="nav-link" href="#volcanic-footer">Contact Us</a></li>
                     </ul>
                 </nav>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-menu"
@@ -58,7 +58,7 @@
                 <form class="search-box btn">
                     <input type="text" placeholder="Keyword" class="form-control">
                     <input type="text" placeholder="Location" class="form-control">
-                    <button class="btn btn-primary">Search Jobs</button>
+                    <button class="btn btn-search">Search Jobs</button>
                 </form>
                 <div class="overlay-section">
                     <div class="icon-slider container">
@@ -93,6 +93,28 @@
                 </div>
             </div>
         </main>
+        <!-- Popup for Login and Register -->
+        <div id="popup-container" class="popup-container">
+            <div class="popup">
+                <button class="close-popup">&times;</button>
+                <div id="popup-content">
+                    <form id="login-form" class="form hidden">
+                        <h2>Login</h2>
+                        <input type="text" placeholder="Username" class="form-control" required>
+                        <input type="password" placeholder="Password" class="form-control" required>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                    <form id="register-form" class="form hidden">
+                        <h2>Register</h2>
+                        <input type="text" placeholder="Username" class="form-control" required>
+                        <input type="email" placeholder="Email" class="form-control" required>
+                        <input type="password" placeholder="Password" class="form-control" required>
+                        <button type="submit" class="btn btn-primary">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
         <section id="latest">
             <div class="container">
                 <h4>Latest Jobs</h4>

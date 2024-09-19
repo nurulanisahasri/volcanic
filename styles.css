@@ -76,6 +76,13 @@ body ul {
     box-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
+.btn-search {
+    background-color: rgb(232, 113, 16);
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    text-transform: uppercase;
+}
+
 .btn-register:hover {
     box-shadow: 0 4px 8px rgba(0,0,0,0.5); /* Larger shadow on hover for emphasis */
 }
@@ -107,8 +114,10 @@ header {
 }
 
 header .logo {
-    font-size: 10px;
+    font-size: 15px;
+    padding-left: 20px;
  }
+
 /*
 header nav {
     flex-grow: 1;
@@ -135,8 +144,9 @@ header nav a {
 .nav-logo {
     font-weight: bold;
     color: rgb(86, 86, 86);
-    font-size: 20px;
-    font: 'Montserrat', sans-serif;  
+    font-size: 25px;
+    font: 'Montserrat', sans-serif; 
+    padding-left: 40px; 
 }
 
 .nav-link {
@@ -161,7 +171,7 @@ header nav a {
 
 #nav-btn {
     display: flex;
-    padding-right: 40px;
+    padding-right: 80px;
     margin-left: auto;
     text-transform: uppercase;
     align-items: center;
@@ -173,7 +183,7 @@ header nav a {
     display: flex;
     align-items: center;
     padding-top: 10px;
-    padding-left: 300px;
+    padding-left: 250px;
     margin: 0;
     flex-direction: row;
 }
@@ -236,7 +246,7 @@ div {
     position: fixed;
     top: 0;
     left: 0;
-    padding: 10px 0;
+    padding: 0;
     width: 100%;
     text-decoration: none;
     transition: padding 0.3s ease-in-out, top 0.3s ease-in-out;
@@ -325,7 +335,7 @@ div {
     cursor: pointer;
 }
 
-.form-control {
+.form-control .btn-search{
     margin-bottom: 6px;
     width: 200px; 
     display: inline-block;
@@ -419,7 +429,7 @@ div {
     bottom: 0;
     width: 100%;
     background-color: rgba(42, 41, 41, 0.5); /* Grey with opacity */
-    padding: 15px 0;
+    padding: 0;
     z-index: 2;
     flex-direction: row;
     overflow: hidden;
@@ -767,10 +777,6 @@ div {
     text-shadow: 3px 3px 40px #424242;
 }
 
-#about-us .container::after {
-    
-}
-
 #about-us h4{
     text-align: center;
     font-size: 22px;
@@ -930,166 +936,170 @@ div {
     padding-bottom: 20px;
 }
 
+/* Popup container*/
+.popup-container {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+    flex-direction: column;
+}
+
+.popup {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px; /* Set your desired width */
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-control {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn-primary {
+    background-color: #007bff; /* Your primary color */
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none; /* Hide forms initially */
+}
+
+
+/* General Mobile Responsiveness Improvements */
 @media (max-width: 768px) {
     .container {
-        max-width: 720px;
-        text-align: center;
+        padding: 10px; /* Reduce padding to utilize space */
+        flex-direction: column; /* Stack elements vertically */
     }
 
     .hero-content {
-        justify-content: center; 
-        background-position: top center;
-        height: 60vh;
+        height: auto; /* Adjust hero height on smaller screens */
+        padding: 20px; /* Add padding for better spacing */
+        flex-direction: column; /* Ensure content stacks vertically */
     }
 
     .hero-content h2 {
-        padding-top: 10px;
-    } /* Missing closing brace added here */
-
-    .nav-menu {
-        flex-direction: column; 
+        font-size: 24px; /* Reduce font size for smaller screens */
     }
 
     .search-box {
+        flex-direction: column; /* Stack form inputs vertically */
+    }
+
+    .search-box .form-control,
+    .search-box button {
+        width: 100%; /* Full width for form elements */
+        margin-bottom: 10px; /* Add space between form elements */
+    }
+
+    .nav-menu {
+        flex-direction: column; /* Stack navbar items */
+    }
+
+    .navbar {
         flex-direction: column;
+        padding: 0; /* Remove padding */
     }
 
-    .hamburger-menu {
-        display: block;
-    }
-
-    #nav-menu.active {
-        display: flex; /* Make the navigation menu visible */
-        flex-direction: column; /* Arrange menu items vertically */
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background-color: #fff;
-        z-index: 1;
-    }
-
-    #nav-menu.active ul {
-        flex-direction: column; /* Arrange menu items vertically */
-    }
-
-    #nav-menu.active li {
-        margin: 10px 0;
+    .nav-link, .btn-login, .btn-register {
+        display: block; /* Make each link fill the space */
+        width: 100%; /* Full width */
+        text-align: center; /* Center align text */
     }
 
     .jobs-container {
-        flex-direction: column;
+        flex-direction: column; /* Stack job cards */
     }
 
     .job-card {
-        width: 90%;  /* Adjust width for smaller screens */
-        margin: 10px auto;
+        width: 100%; /* Full width for job cards */
+        margin: 10px 0; /* Space between job cards */
     }
 
-    .work-with-us {
-        flex-direction: column;
+    .icon-slider {
+        flex-wrap: wrap; /* Wrap icons if necessary */
     }
 
-    .work-for-us {
-        flex-direction: column;
+    .icon {
+        width: 50%; /* Adjust icon size */
     }
 
-    .content, .image-container {
-        width: 100%;
+    .insights-container {
+        flex-direction: column; /* Stack insights vertically */
     }
 
     .insight {
-        width: 100%; 
+        width: 100%; /* Full width for insights */
     }
+}
 
- }
-
-
- /* Media queries for mobile devices */
- @media (max-width: 480px) {
-
-    .container {
-        max-width: 450px;
-    }
-
-    .hero-content {
-        justify-content: center; 
-        height: 50vh;
-    }
-
+@media (max-width: 480px) {
     .hero-content h2 {
-        padding-top: 10px; /* Reduces padding on smaller devices */
+        font-size: 20px; /* Even smaller font size for very small devices */
+    }
+
+    .icon {
+        width: 100%; /* Full width for icons for better visibility */
     }
 
     .nav-menu {
-        flex-direction: column; 
+        padding: 0 10px; /* Adjust padding for navbar */
     }
 
-    /* Styles for the navigation menu when active */
-    #nav-menu.active {
-        display: flex; /* Make the navigation menu visible */
-        flex-direction: column; /* Arrange menu items vertically */
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background-color: #fff;
-        z-index: 1;
+    .footer-section {
+        flex-direction: column; /* Stack footer content */
+        text-align: center; /* Center-align footer text */
     }
 
-    #nav-menu.active ul {
-        flex-direction: column; /* Arrange menu items vertically */
+    .profile .profile-image {
+        width: 60px; /* Smaller profile images */
+        height: 60px; /* Maintain aspect ratio */
     }
 
-    #nav-menu.active li {
-        margin: 10px 0;
-    }
-
-    .search-box {
-        flex-direction: column;
+    .button-container .btn {
+        padding: 8px 16px; /* Adjust button padding */
     }
 
     .overlay-section {
-        padding: 10px 0;  /* Even smaller padding */
-        background-color: rgba(128, 128, 128, 0.7);
-        font-size: 10px;  /* Slightly darker for better readability on small devices */
-    }
-
-    #volcanic-footer .footer-section{
-        -ms-flex-direction: column;
-        flex-direction: column;
-        font-size: 8px;
-    }
-
-    .jobs-container {
-        flex-direction: column;
-    }
-
-    .job-card {
-        width: 90%;  /* Adjust width for smaller screens */
-        margin: 10px auto;
-    }
-
-    #testimonials .container {
-        padding-top: 5px;
-        padding-bottom: 20px;
-    }
-
-    #testimonials .h4 {
-        font-size: 12px;
-        color: #fff;
-    }
-
-    .work-with-us {
-        flex-direction: column;
-    }
-
-    .work-for-us {
-        flex-direction: column;
-    }
-
-    .content, .image-container {
-        width: 100%;
+        background-color: rgba(128, 128, 128, 0.7); /* Better visibility for overlay text */
     }
 }
+
+/* Ensure that buttons and links are easy to tap */
+.btn, .nav-link {
+    padding: 12px 20px; /* Larger tap area */
+}
+
 
