@@ -529,6 +529,50 @@ div {
 
 /* Additional styling for your slider component */
 
+/* Latest Insight */
+#latest-insights {
+    padding: 20px;
+}
+
+#latest-insights h2 {
+    font-size: 24px;
+}
+
+.insights-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.insight {
+    width: 30%;
+    height: 300px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+
+.info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 165, 0, 0.75); /* Orange background with transparency */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    padding: 10px;
+}
+
+.insight:hover .info {
+    opacity: 1;
+}
 
 /* Footer styles */
 #volcanic-footer {
@@ -719,7 +763,8 @@ div {
     display: flex;
     justify-content: center;  
     width: 100%;  
-    padding: 10px 0;  
+    padding: 10px 0;
+}
 
 .read-more {
     background: transparent;  
@@ -787,10 +832,9 @@ div {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px;
+    padding: 0 45px 0 45px;
     background-color: #FF8C00; /* Orange background */
     color: #ffffff;
-    padding-bottom: 30px;
 }
 
 .text-box {
@@ -800,6 +844,7 @@ div {
     padding: 20px;
     box-sizing: border-box;
     display: flex;
+    text-align: center;
 } 
 
 .image-box {
@@ -833,6 +878,12 @@ div {
     padding-bottom: 20px;
 }
 
+#latest-insights .container {
+    text-align: center;
+}
+
+#latest-insights h4 {
+    text-align: center;
 }
 
 @media (max-width: 768px) {
