@@ -344,13 +344,15 @@ div {
 
 
 /* Featured jobs section styles */
-#latest-jobs {
-    background-color: #FFA500;
-    padding: 20px;
-}
 
-#latest h4 {
-    text-align: center; 
+#latest .container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 
 .jobs-container {
@@ -531,27 +533,56 @@ div {
 
 /* Latest Insight */
 #latest-insights {
-    padding: 20px;
+    text-align: center;
+    padding: 50px 0;
+    width: 100%; /* Ensures that the section uses the full width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#latest-insights h2 {
+#latest-insights h4 {
+    margin-bottom: 20px;
     font-size: 24px;
+    font-weight: bold;
+}
+
+.box-one {
+    width: 100%; /* Use 100% of the parent container */
+    max-width: 85%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+    display: flex; 
+    flex-direction: column;
+    align-items: center;  
 }
 
 .insights-container {
     display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
+    width: 100%; 
+    justify-content: space-between; 
+    flex-direction: row; 
+    gap: 10px; 
+    align-items: center;
 }
 
 .insight {
-    width: 30%;
-    height: 300px;
-    position: relative;
     background-size: cover;
     background-position: center;
-    cursor: pointer;
-}
+    width: 100%; 
+    min-height: 300px;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 20px; 
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+} 
 
 .info {
     position: absolute;
@@ -559,7 +590,7 @@ div {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 165, 0, 0.75); /* Orange background with transparency */
+    background: rgba(255, 165, 0, 0.75); 
     color: white;
     display: flex;
     flex-direction: column;
@@ -715,6 +746,10 @@ div {
  padding-top: 20px;
  padding-bottom: 100px;
  position: relative;
+ align-items: center;
+ display: flex;
+ flex-direction: column;
+ text-align: center;
 }
 
 #about-us .container::before {
@@ -727,15 +762,25 @@ div {
     background-image: url('images/about-us.jpg');
     background-size: cover;
     background-position: center;
-    opacity: 0.3;  /* Adjust opacity here */
+    opacity: 0.1;  /* Adjust opacity here */
     z-index: -1;
+    text-shadow: 3px 3px 40px #424242;
+}
+
+#about-us .container::after {
+    
 }
 
 #about-us h4{
     text-align: center;
-    font-size: 18px;
+    font-size: 22px;
+    font-weight: 500;
     color: #fff;
     text-shadow: 2px 2px 40px #424242;
+    align-items: center;
+    padding-bottom: 2px;
+    margin-bottom: 0px;
+
 }
 
 #about-us p {
@@ -744,7 +789,9 @@ div {
     margin: auto;
     color: #fff;
     text-shadow: 2px 2px 40px #424242;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
+    align-items: center;
+    padding: 2%;
 }
 
 #about-us h5 {
@@ -796,9 +843,9 @@ div {
 
 #testimonials .container {
     padding-top: 20px;
-    padding-bottom: 100px;
+    padding-bottom: 0;
     position: relative;
-    color: #fff;
+    color: #3f3f3f;
 }
 
 .profile {
@@ -806,7 +853,7 @@ div {
     margin-top: 30px;
 }
 
-.profile profile-image {
+.profile .profile-image {
     width: 80px !important;
     height: 80px; 
     border-radius: 50%; 
@@ -821,18 +868,20 @@ div {
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.name p{
-    font-weight: bold;
-    color: #724a19;
+.profile p{
+    font-weight: medium-bold;
+    color: #d37707;
     text-align: center;
+    padding-bottom: 10px;
+    font-size: 14px;
 }
 
 /* Work section */
-#work-with-us .container {
+#work-with-us .box {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 45px 0 45px;
+    padding: 0;
     background-color: #FF8C00; /* Orange background */
     color: #ffffff;
 }
@@ -841,10 +890,13 @@ div {
     flex-basis: 50%;
     background-color: #ff8c00;
     color: rgb(240, 236, 236);
-    padding: 20px;
+    padding: 60px;
     box-sizing: border-box;
     display: flex;
     text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 } 
 
 .image-box {
@@ -876,14 +928,6 @@ div {
 
 .image-container {
     padding-bottom: 20px;
-}
-
-#latest-insights .container {
-    text-align: center;
-}
-
-#latest-insights h4 {
-    text-align: center;
 }
 
 @media (max-width: 768px) {
@@ -952,6 +996,10 @@ div {
 
     .content, .image-container {
         width: 100%;
+    }
+
+    .insight {
+        width: 100%; 
     }
 
  }
