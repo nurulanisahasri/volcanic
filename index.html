@@ -23,7 +23,7 @@
                 <div class="logo">
                     <a class="nav-logo" href="#">volcanic</a>
                 </div>
-                <nav id="nav-menu" class="collapse navbar-collapse">
+                <nav id="nav-menu" class="collapse navbar-collapse navbar-expand-md">
                     <ul class="navbar">
                         <li><a class="nav-link" href="#">About</a></li>
                         <li><a class="nav-link" href="#">Candidates</a></li>
@@ -33,6 +33,10 @@
                         <li><a class="nav-link" href="#">Contact Us</a></li>
                     </ul>
                 </nav>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-menu"
+                    aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <nav id="nav-btn">
                     <a href="#" class="btn btn-login">Login</a>
                     <a href="#" class="btn btn-register">Register</a>
@@ -50,8 +54,8 @@
 
                 <h2>Welcome to Volcanic!</h2>
                 <form class="search-box btn">
-                    <input type="text" placeholder="Keyword" class="form-control" required>
-                    <input type="text" placeholder="Location" class="form-control" required>
+                    <input type="text" placeholder="Keyword" class="form-control">
+                    <input type="text" placeholder="Location" class="form-control">
                     <button class="btn btn-primary">Search Jobs</button>
                 </form>
                 <div class="overlay-section">
@@ -81,8 +85,8 @@
                             <img src="images/twitter-icon.svg" alt="twitter" class="slide">
                             <p>Icon Text</p>
                         </div>
-                        <button class="slide-btn prev-btn"></button>
-                        <button class="slide-btn next-btn"></button>
+                        <button class="slide-btn prev-btn">&lt;</button>
+                        <button class="slide-btn next-btn">&gt;</button>
                     </div>
                 </div>
             </div>
@@ -152,21 +156,37 @@
                 </div>
             </div>
         </section>
-        <section class="testimonials">
-            <div class="container">
-                <h4>Testimonials</h4>
-                <p>Every customer feedback is our satisfaction in order to improve more and bring<br>
-                    more opportunity in every aspects. Our intellegence nowadays are beyond technology<br>
-                    and moving forward along the fast-pace technology makes our life improve better.
-                </p>
-            </div>
-            <div class="profile">
-                <img src="/images/profile.jpg" alt="Adrian Chapman" class="profile-img">
-                <p class="name">Adrian Champ, <span class="role">Head of Sales, Capita EB</span></p>
-            </div>
 
+        <section id="testimonials">
+            <div class="container">
+                <div>
+                    <h4>Testimonials</h4>
+                    <p>Every customer feedback is our satisfaction in order to improve more and bring<br>
+                        more opportunity in every aspects. Our intellegence nowadays are beyond technology<br>
+                        and moving forward along the fast-pace technology makes our life improve better.
+                    </p>
+                </div>
+            </div>
+            <!-- <div class="profile">
+                <img src="/images/profile.jpg" alt="profile image" class="profile-image">
+                <p class="name">Adrian Champ, <span class="role">Head of Sales, Capita EB</span></p>
+            </div> -->
         </section>
 
+        <section id="work-with-us">
+            <div class="container">
+                <h4>Work for us</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                    labore
+                    et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip
+                    ex ea commodo consequat.</p>
+            </div>
+            <div class="image-container" style="padding-bottom: 20px;">
+                <img src="images/work.png" alt="Work Environment" class="work-image">
+            </div>
+        </section>
 
         <footer id="volcanic-footer">
             <div class="grid">
@@ -210,7 +230,7 @@
     <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/7.6.1/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 

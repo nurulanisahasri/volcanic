@@ -1,11 +1,11 @@
 /* Basic styles */
-/* body {
+body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f5f5f5;
     color: #333;
-} */
+} 
 
 body, html {
     height: 100%;
@@ -27,14 +27,16 @@ body ul {
     max-width: 100%;
     margin-right: auto;
     margin-left: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
     padding-right: 25px;
     padding-left: 25px;
-    /*display: flex;*/
     justify-content: space-around;
     align-items: center;
     overflow: visible;
     z-index: 3;
     padding-bottom: 10px;
+    text-align: center;
    
 } 
 
@@ -170,7 +172,7 @@ header nav a {
     display: flex;
     align-items: center;
     padding-top: 10px;
-    padding-left: 390px;
+    padding-left: 350px;
     margin: 0;
     flex-direction: row;
 }
@@ -400,7 +402,7 @@ div {
     position: absolute;
     right: 0px;
     bottom: 0px;
-    color: white;
+    color: #FF8C00;
 }
 
 .apply-btn:hover {
@@ -737,7 +739,7 @@ div {
 
 /* Testimonials section styles */
 
-.testimonials h4 {
+#testimonials .h4 {
     text-align: center;
     font-size: 16px;
     color: #fff;
@@ -746,10 +748,11 @@ div {
 
 }
 
-.testimonials .container {
+#testimonials .container {
     padding-top: 20px;
     padding-bottom: 100px;
     position: relative;
+    color: #fff;
 }
 
 .profile {
@@ -757,7 +760,7 @@ div {
     margin-top: 30px;
 }
 
-.profile-img {
+.profile profile-image {
     width: 80px; 
     height: 80px; 
     border-radius: 50%; 
@@ -765,20 +768,68 @@ div {
     transition: transform 0.3s ease-in-out; 
     display: block; 
     margin: 0 auto 10px; 
+}
 
-.profile-img:hover {
+.profile-image:hover {
     transform: scale(1.1); /* Enlarges the image on hover */
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.name, .role {
+.name p{
     font-weight: bold;
     color: #FF8C00;
 }
 
-@media (max-width: 768px) {
+/* Work section */
+#work-for-us .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #FF8C00; /* Orange background */
+    color: #ffffff;
+    padding-bottom: 30px;
+}
+
+.content {
+    padding: 20px;
+    width: 50%;
+}
+
+.image-container {
+    width: 50%;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+}
+
+.learn-more-btn {
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: #333;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.learn-more-btn:hover {
+    background-color: #ddd;
+    color: #222;
+}
+
+.image-container {
+    padding-bottom: 20px;
+}
+
+
+
+ @media (max-width: 768px) {
     .container {
         max-width: 720px;
+        text-align: center;
     }
 
     .hero-content {
@@ -788,7 +839,8 @@ div {
     }
 
     .hero-content h2 {
-        padding-top: 10px; 
+        padding-top: 10px;
+    } /* Missing closing brace added here */
 
     .nav-menu {
         flex-direction: column; 
@@ -798,12 +850,10 @@ div {
         flex-direction: column;
     }
 
-    /* Show hamburger menu on smaller screens */
     .hamburger-menu {
         display: block;
     }
 
-    /* Styles for the navigation menu when active */
     #nav-menu.active {
         display: flex; /* Make the navigation menu visible */
         flex-direction: column; /* Arrange menu items vertically */
@@ -832,10 +882,23 @@ div {
         margin: 10px auto;
     }
 
-}
+    .work-with-us {
+        flex-direction: column;
+    }
 
-/* Media queries for mobile devices */
-@media (max-width: 480px) {
+    .work-for-us {
+        flex-direction: column;
+    }
+
+    .content, .image-container {
+        width: 100%;
+    }
+
+ }
+
+
+ /* Media queries for mobile devices */
+ @media (max-width: 480px) {
 
     .container {
         max-width: 450px;
@@ -852,11 +915,6 @@ div {
 
     .nav-menu {
         flex-direction: column; 
-    }
-
-    /* Show hamburger menu on smaller screens */
-    .hamburger-menu {
-        display: block;
     }
 
     /* Styles for the navigation menu when active */
@@ -903,5 +961,28 @@ div {
         width: 90%;  /* Adjust width for smaller screens */
         margin: 10px auto;
     }
+
+    #testimonials .container {
+        padding-top: 5px;
+        padding-bottom: 20px;
+    }
+
+    #testimonials .h4 {
+        font-size: 12px;
+        color: #fff;
+    }
+
+    .work-with-us {
+        flex-direction: column;
+    }
+
+    .work-for-us {
+        flex-direction: column;
+    }
+
+    .content, .image-container {
+        width: 100%;
+    }
 }
+
 }
