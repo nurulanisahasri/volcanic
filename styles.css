@@ -112,6 +112,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 header .logo {
@@ -1028,6 +1029,21 @@ div {
         flex-direction: column; /* Stack navbar items */
     }
 
+    #nav-menu {
+        display: none; /* Initially hide the navbar for mobile */
+    }
+
+    .navbar-collapse.show {
+        display: flex; /* Show the navbar when expanded */
+        flex-direction: column; /* Stack items vertically on mobile */
+        align-items: flex-start;
+        padding-left: 20px;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
     .navbar {
         flex-direction: column;
         padding: 0; /* Remove padding */
@@ -1037,6 +1053,15 @@ div {
         display: block; /* Make each link fill the space */
         width: 100%; /* Full width */
         text-align: center; /* Center align text */
+        padding: 10px 0;
+    }
+
+    #nav-btn {
+        padding: 10px 20px; /* Adjust button padding for mobile */
+    }
+
+    .navbar-toggler {
+        display: block; /* Show the toggle button in mobile view */
     }
 
     .jobs-container {
@@ -1076,6 +1101,10 @@ div {
 
     .nav-menu {
         padding: 0 10px; /* Adjust padding for navbar */
+    }
+
+    #nav-menu {
+        display: none; /* Initially hide the navbar for mobile */
     }
 
     .footer-section {
