@@ -1,17 +1,55 @@
+// document.addEventListener("DOMContentLoaded", function () {
+//   const slider = document.querySelector(".icon-slider");
+//   const icons = document.querySelectorAll(".icon");
+//   const totalIcons = icons.length;
+//   let currentIndex = 0;
+//   const slideInterval = 3000; // Time in milliseconds
+
+//   function slideIcons() {
+//     currentIndex++;
+//     if (currentIndex >= totalIcons) {
+//       currentIndex = 0; // Loop back to the first icon
+//     }
+//     const offset = -currentIndex * (100 / totalIcons); // Calculate the offset for sliding
+//     slider.style.transform = `translateX(${offset}%)`;
+//   }
+
+//   // Set the interval for auto-sliding
+//   setInterval(slideIcons, slideInterval);
+
+//   // Optional: Add click events for the buttons
+//   document.querySelector(".prev-btn").addEventListener("click", function () {
+//     currentIndex = currentIndex > 0 ? currentIndex - 1 : totalIcons - 1;
+//     slideIcons();
+//   });
+
+//   document.querySelector(".next-btn").addEventListener("click", function () {
+//     slideIcons();
+//   });
+// });
+
 document.addEventListener("DOMContentLoaded", function () {
   const slider = document.querySelector(".icon-slider");
   const icons = document.querySelectorAll(".icon");
-  const totalIcons = icons.length;
+  const totalIcons = icons.length / 2; // Adjust for the duplicated icons
   let currentIndex = 0;
   const slideInterval = 3000; // Time in milliseconds
 
   function slideIcons() {
     currentIndex++;
-    if (currentIndex >= totalIcons) {
-      currentIndex = 0; // Loop back to the first icon
+    if (currentIndex > totalIcons) {
+      slider.style.transition = "none"; // Disable transition for instant reset
+      currentIndex = 1; // Reset to the first real icon
+      const offset = -currentIndex * (100 / totalIcons);
+      slider.style.transform = `translateX(${offset}%)`;
+      setTimeout(() => {
+        slider.style.transition = "transform 0.5s ease"; // Re-enable transition
+        slideIcons();
+      }, 50);
+    } else {
+      const offset = -currentIndex * (100 / totalIcons);
+      slider.style.transform = `translateX(${offset}%)`;
     }
-    const offset = -currentIndex * (100 / totalIcons); // Calculate the offset for sliding
-    slider.style.transform = `translateX(${offset}%)`;
   }
 
   // Set the interval for auto-sliding
@@ -19,14 +57,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Optional: Add click events for the buttons
   document.querySelector(".prev-btn").addEventListener("click", function () {
-    currentIndex = currentIndex > 0 ? currentIndex - 1 : totalIcons - 1;
-    slideIcons();
+    if (currentIndex === 0) {
+      slider.style.transition = "none";
+      currentIndex = totalIcons;
+      const offset = -currentIndex * (100 / totalIcons);
+      slider.style.transform = `translateX(${offset}%)`;
+      setTimeout(() => {
+        slider.style.transition = "transform 0.5s ease";
+        currentIndex--;
+        slideIcons();
+      }, 50);
+    } else {
+      currentIndex = currentIndex > 0 ? currentIndex - 1 : totalIcons - 1;
+      slideIcons();
+    }
   });
 
   document.querySelector(".next-btn").addEventListener("click", function () {
     slideIcons();
   });
 });
+
 
 // Mobile navigation toggle functionality
 const hamburgerMenu = document.querySelector(".hamburger-menu");

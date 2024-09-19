@@ -81,6 +81,7 @@ body ul {
     color: #fff;
     box-shadow: 0 2px 4px rgba(0,0,0,0.3);
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 .btn-register:hover {
@@ -335,14 +336,13 @@ div {
     cursor: pointer;
 }
 
-.form-control .btn-search{
+.form-control {
     margin-bottom: 6px;
     width: 200px; 
     display: inline-block;
     border-radius: 0;
     font-size: 12px;;
     border: none;
-    cursor: pointer;
 }
 
 .icon p{
