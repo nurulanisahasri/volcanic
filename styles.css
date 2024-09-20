@@ -339,12 +339,8 @@ div {
     border: none;
     cursor: text;
     z-index: 10;
+    text-align: center;
 }
-
-/* .search-box .form-control-search:focus {
-    border-color: #5a5b5d; 
-    outline: none; 
-} */
 
 .btn-search {
     margin-bottom: 2px;
@@ -446,28 +442,33 @@ div {
     flex-direction: row;
     overflow: hidden;
     cursor: pointer;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+
 }
 
 .icon-slider {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     position: relative;
     overflow: hidden;
-    width: calc(20% * 6);
+    width: auto;
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
 }
 
 .icon {
-    flex: 0 0 20%;
+    flex: 0 0 auto;
     text-align: center;
     margin: 0 10px;
     cursor: pointer;
     transition: transform 0.5s ease-in-out;
     padding: 10px;
     z-index: 10;
+    justify-content: space-between;
 }
 
 .icon img {
@@ -496,13 +497,13 @@ div {
     z-index: 2;
 }
 
-.prev-btn {
+/* .prev-btn {
     left: 0;
 }
 
 .next-btn {
     right: 0;
-}
+} */
 
 .prev-btn::before, .next-btn::before {
     content: "";
@@ -530,13 +531,13 @@ div {
     height: 8px; /* Arrow size */
 }
 
-.prev-btn {
+ /* .prev-btn {
     left: 10px;
 }
 
 .next-btn {
     right: 10px;
-}
+} */
 
 .clearfix::after {
     content: "";
@@ -665,11 +666,27 @@ div {
 }
 
 .info-socmed {
-    /*display: flex;*/
+    /* display: flex; */
     align-items: center;
     inline-size: auto;
     justify-content: space-between;
+    transition: filter 0.3s ease;
+    cursor: pointer;
+    padding:;
 
+}
+
+.info-socmed div {
+    display: flex;
+    gap: 5px;
+}
+
+.info-socmed img {
+    transition: filter 0.3s;
+}
+
+.info-socmed img:hover {
+    filter: invert(53%) sepia(98%) saturate(7484%) hue-rotate(2deg) brightness(102%) contrast(101%);
 }
 
 .icon {
@@ -680,7 +697,7 @@ div {
 }
 
 .icon:hover {
-    transform: rotateX(-10deg);
+    transform: rotateX(-10deg) saturate(100%) hue-rotate(-50deg) sepia(1) saturate(5) brightness(1.2);
 }
 
 .icon-footer h3{
@@ -999,7 +1016,7 @@ div {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    align-items: center;
+    text-align: center;
 }
 
 .form hidden input[type="text"] {
