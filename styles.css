@@ -327,7 +327,7 @@ div {
 
 /* Search Box */
 
-.form-control {
+.form-control-search {
     margin-bottom: 6px;
     width: 200px; 
     display: inline-block;
@@ -337,10 +337,10 @@ div {
     cursor: text;
 }
 
-.search-box .form-control:focus {
-    border-color: #007bff; /* Highlight input on focus */
-    outline: none; /* Remove default outline */
-}
+/* .search-box .form-control-search:focus {
+    border-color: #5a5b5d; 
+    outline: none; 
+} */
 
 .btn-search {
     margin-bottom: 2px;
@@ -966,6 +966,8 @@ div {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .close-popup {
@@ -981,6 +983,7 @@ div {
 .form {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .form-control {
@@ -988,6 +991,11 @@ div {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    align-items: center;
+}
+
+.form hidden input[type="text"] {
+    align-items: center;
 }
 
 .btn-primary {
@@ -1024,7 +1032,7 @@ div {
         flex-direction: column; /* Stack form inputs vertically */
     }
 
-    .search-box .form-control,
+    .search-box .form-control-search,
     .search-box button {
         width: 100%; /* Full width for form elements */
         margin-bottom: 10px; /* Add space between form elements */
