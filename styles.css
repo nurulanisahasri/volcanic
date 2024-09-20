@@ -327,18 +327,23 @@ div {
 
 /* Search Box */
 
-.search-box .form-control {
+.form-control {
     margin-bottom: 6px;
     width: 200px; 
     display: inline-block;
     border-radius: 0;
     font-size: 12px;;
     border: none;
-    cursor: pointer;
+    cursor: text;
 }
 
-.form-control {
-    margin-bottom: 6px;
+.search-box .form-control:focus {
+    border-color: #007bff; /* Highlight input on focus */
+    outline: none; /* Remove default outline */
+}
+
+.btn-search {
+    margin-bottom: 2px;
     width: 200px; 
     display: inline-block;
     border-radius: 0;
@@ -1128,7 +1133,7 @@ div {
 
 /* Ensure that buttons and links are easy to tap */
 .btn, .nav-link {
-    padding: 12px 20px; /* Larger tap area */
+    padding: 8px 20px; /* Larger tap area */
 }
 
 
