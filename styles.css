@@ -153,6 +153,7 @@ header nav a {
     font-size: 25px;
     font: 'Montserrat', sans-serif; 
     padding-left: 40px; 
+    text-decoration: none;
 }
 
 .nav-link {
@@ -163,6 +164,15 @@ header nav a {
     padding: 0 8px; 
     display: flex; 
     text-transform: uppercase;
+}
+
+.nav-logo, .nav-link {
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.nav-logo:hover, .nav-link:hover {
+    color: #FF8C00; /* Change color to orange on hover */
+    text-decoration: none;
 }
 
 #nav-menu {
@@ -672,7 +682,6 @@ div {
     justify-content: space-between;
     transition: filter 0.3s ease;
     cursor: pointer;
-    padding:;
 
 }
 
@@ -686,7 +695,7 @@ div {
 }
 
 .info-socmed img:hover {
-    filter: invert(53%) sepia(98%) saturate(7484%) hue-rotate(2deg) brightness(102%) contrast(101%);
+    filter: invert(53%) sepia(98%) saturate(6484%) hue-rotate(2deg) brightness(62%) contrast(100%);
 }
 
 .icon {
@@ -921,6 +930,10 @@ div {
     padding: 0;
     background-color: #FF8C00; /* Orange background */
     color: #ffffff;
+}
+
+.box {
+    max-width: 85%;
 }
 
 .text-box {
